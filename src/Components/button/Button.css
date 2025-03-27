@@ -1,0 +1,20 @@
+.custombutton{
+    padding: 10px;
+    background-color: #068081;
+    color: #ffffff;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+border-radius: 10px;
+}
+
+.custombutton button{
+    border: none;
+    background-color: transparent;
+    color: #ffffff;
+    align-items: center;
+    text-align: center;
+}

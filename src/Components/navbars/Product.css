@@ -1,0 +1,57 @@
+form {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  margin: auto;
+  background: #06818128;
+  padding: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+
+}
+.form {
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+  width: 50%;
+  box-shadow: 2px 3px 5px rgb(172, 214, 235);
+  margin: auto;
+}
+.form .title {
+  display: flex;
+  justify-content: space-between;
+}
+.form .title  h5{
+  font-size: 20px;
+}
+.form .title  span{
+  cursor: pointer;
+}
+.inputfile-label{
+  width: 100%;
+  border: 1px solid rgb(116, 116, 116);
+  cursor: pointer;
+  padding: 15px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.inputfile{
+  display:none;
+  width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.textarea{
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+
+}
+textarea{
+  padding: 2px;
+}

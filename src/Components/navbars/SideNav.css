@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
+}
+.container {
+  justify-content: center;
+  align-items: center;
+  width: 97%;
+  margin: auto;
+}
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+.real-logo{
+  width: 35%;
+  justify-content: center;
+  padding-top: 25px;
+}
+.side-nav {
+  display: flex;
+  flex-direction: column;
+  background: #F9FFFF;
+  width: 210px;
+  position: fixed;
+  height: 100%;
+  left: 0;
+  z-index: 99;
+}
+.logo {
+  width: 100%;
+  border-bottom: 1px solid #068081;
+  padding:20px 0px 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  align-items: center;
+}
+.logo a {
+  color: #068081;
+  font-weight: 700;
+  justify-content: center;
+  font-size: 26px;
+  padding-top: 15px;
+}
+.line {
+  background-color: #f4f7fe;
+  height: 2px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+nav ul {
+  padding: 5px 0;
+}
+nav li {
+  width: 100%;
+  padding: 8px 0px;
+}
+nav li .active {
+  border-right: 3px solid #068081;
+}
+nav ul li a {
+  color: #000000;
+  font-weight: 500;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  padding: 15px 0 15px 20px;
+  gap: 10px;
+  width: 100%;
+}
+.side-nav ul .active {
+  color: #068081;
+}
+.text-below {
+  width: 80%;
+  text-align: center;
+  padding-bottom: 10px;
+  /* position: absolute; */
+  bottom: 0px;
+}
+.text-below img {
+  width: 60%;
+  text-align: center;
+}
+
+
+/* styling for the resonsive navbar */
+.top-nav {
+  display: none;
+}
+.whole {
+  position: fixed;
+  right: 0px;
+  left: 0px;
+  z-index: 100;
+}
+
+.whole .background {
+  background: #000000;
+  width: 100%;
+}
+.first-ul {
+  background: #000000;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  width: 90%;
+  display: flex;
+}
+.first-ul .drop-command {
+  color: #068081;
+  display: flex;
+  border: 1px solid #068081;
+  padding: 10px;
+  border-radius: 30px;
+  gap: 10px;
+  cursor: pointer;
+}
+.first-ul .drop-command svg {
+  font-size: 30px;
+  color: #068081;
+}
+.first-ul .drop-command h5 {
+  font-size: 20px;
+  color: #068081;
+}
+.first-ul li  {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+}
+.first-ul .real-logo{
+  width: 30%;
+  padding-top: 20px;
+}
+.first-ul a{
+  justify-content: right;
+  text-align: center;
+  display: flex;
+}
+.first-ul li a {
+  width: 100%;
+  border-bottom: none;
+  text-align: center;
+  align-items: center;
+  margin: auto 30%;
+  padding-left: 5px;
+  color: 068081;
+  font-weight: 700;
+  font-size: 26px;
+  display: flex;
+}
+.whole .main-ul {
+  background: #000000;
+  padding-top: 0px;
+  height: 100%;
+}
+.whole .main-ul li{
+  padding: 8px 0px;
+}
+.whole .main-ul li a {
+  padding: 15px 0 15px 20px;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+
+}
+.whole .main-ul .text-below {
+  padding-top: 0px;
+}
+
+.whole .miss {
+  width: 300px;
+}
+.whole .main-ul .text-below img{
+  padding-top: 0px;
+  width: 40%;
+}
+
+
+.topnav{
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  background-color: #F3F6F4;
+}
+
+.topnav-container{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  /* margin-bottom: 10px; */
+  padding: 10px 0px;
+  border-radius: 30px;
+}
+
+.topnav-flec{
+  display: flex;
+  gap: 10px;
+}

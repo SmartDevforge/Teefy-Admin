@@ -1,0 +1,102 @@
+.login-full-page{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-login {
+    padding: 0px;
+    justify-content: center;
+    margin: auto;
+    width: 95%;
+}
+.login{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+.login-form{
+    width: 35%;
+    padding: 25px;
+}
+.login-form h5{
+    font-size: 25px;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+}
+.user-input {
+    width: 100%;
+    padding-top: 30px;
+}
+.user-input label {
+    font-size: 18px;
+    font-weight: 400;
+    padding: 10px 0px;
+}
+.input{
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    background: rgb(244, 245, 247);
+    padding: 5px;
+}
+.input svg{
+    font-size: 20px;
+    color: rgb(148, 148, 148);
+}
+.input input{
+    padding: 5px;
+    font-size: 15px;
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: rgb(68, 68, 68);
+}
+.remember{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.remember input{
+    cursor: pointer;
+}
+.remember p{
+    padding-left: 5px;
+}
+.login-form button{
+    padding: 10px 20px;
+    cursor: pointer;
+    background: rgb(201, 18, 18);
+    border: none;
+    justify-content: center;
+    width: 100%;
+    border-radius: 4px;
+    color: #ffffff;
+
+}
+@media (max-width:1100px) {
+    .login-form {
+        width: 50%;
+    }
+}
+
+@media (max-width:768px) {
+    .login-form {
+        width: 60%;
+    }
+}
+@media (max-width:550px) {
+    .login-form {
+        width: 78%;
+    }
+}
+@media (max-width:430px) {
+    .login-form {
+        width: 85%;
+    }
+}

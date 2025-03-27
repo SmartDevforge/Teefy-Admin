@@ -1,0 +1,34 @@
+[
+    {
+        "label" : "12 Nov",
+        "value" : 24
+    },
+    {
+        "label" : "13 Nov",
+        "value" : 14
+    },
+    {
+        "label" :"14 Nov",
+        "value" : 15
+    },
+    {
+        "label" :"15 Nov",
+        "value" : 30
+    },
+    {
+        "label" :"16 Nov",
+        "value" : 22
+    },
+    {
+        "label" :"17 Nov",
+        "value" : 28
+    },
+    {
+        "label" :"18 Nov",
+        "value" : 25
+    },
+    {
+        "label" :"19 Nov",
+        "value" : 26
+    }
+]
