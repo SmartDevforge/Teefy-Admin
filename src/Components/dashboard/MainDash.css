@@ -5,12 +5,14 @@
   font-family: "DM Sans", sans-serif;
   transition: 1s ease-in-out;
 }
-.container {
+.dashboard-container {
   justify-content: center;
   align-items: center;
   width: 98%;
   margin: auto;
-  padding-left: 210px;
+  padding-left: 16%;
+  background-color: #f3f6f4;
+
 }
 .full-headnav {
   position: sticky;

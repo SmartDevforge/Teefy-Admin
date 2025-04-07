@@ -14,13 +14,11 @@ import TopSelling from "./TopSelling";
 
 
 function MainDash({onClick}) {
-  // const [reach, setReach] = useState(Subscribers);
-  // const [value, onChange] = useState(new Date());
 
   // https://www.figma.com/design/sz7F668QqVKkIf5Tg3NT58/TeeFey-E-commerce?node-id=166-899&t=vZc03O65kQVdff5r-0
 
   return (
-    <div className="container">
+    <div className="dashboard-container">
       <div className="mainDash">
         <TopNav onClick={onClick}/>
       </div>
@@ -78,12 +76,6 @@ function MainDash({onClick}) {
           <LineCharts />
           <TopSelling />
         </div>
-        {/* <div className="formcontainer">
-          <ProductForm />
-        </div> */}
-
-
-
       </div>
     </div>
   );

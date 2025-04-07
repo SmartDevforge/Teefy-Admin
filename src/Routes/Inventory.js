@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import SideNav from '../Components/navbars/SideNav'
 import ProductsTable from '../Components/products/Products'
+import InventoryTable from '../Components/inventory/Inventory'
 import ProductForm from '../Components/navbars/ProductForm';
 
 
-
-const Products = () => {
-   const [showForm, setShowForm] = useState(false);
+const Inventory = () => {
+    const [showForm, setShowForm] = useState(false);
     const handleShowForm = () => {
       setShowForm(true)
       console.log('Mata clicked me')
@@ -19,7 +19,7 @@ const Products = () => {
   return (
     <div>
       <SideNav />
-      <ProductsTable onClick={handleShowForm} />
+      <InventoryTable />
 
       <div>
         {
@@ -34,4 +34,4 @@ const Products = () => {
   )
 }
 
-export default Products
+export default Inventory

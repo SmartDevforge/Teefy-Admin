@@ -36,20 +36,21 @@ a {
 .logo {
   width: 100%;
   border-bottom: 1px solid #068081;
-  padding:20px 0px 10px 0;
+  padding:15px 0px 10px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   margin: auto;
   align-items: center;
+  margin-bottom: 5px;
 }
 .logo a {
   color: #068081;
   font-weight: 700;
   justify-content: center;
   font-size: 26px;
-  padding-top: 15px;
+  padding-top: 10px;
 }
 .line {
   background-color: #f4f7fe;
@@ -57,15 +58,16 @@ a {
   width: 100%;
   margin-bottom: 30px;
 }
-nav ul {
-  padding: 5px 0;
-}
+
 nav li {
   width: 100%;
-  padding: 8px 0px;
+  /* padding: 8px 0px; */
 }
 nav li .active {
-  border-right: 3px solid #068081;
+  /* border-right: 3px solid #068081; */
+  background-color: #068081;
+  color: #ffffff;
+  border-radius: 10px;
 }
 nav ul li a {
   color: #000000;
@@ -78,19 +80,9 @@ nav ul li a {
   width: 100%;
 }
 .side-nav ul .active {
-  color: #068081;
+  color: #ffffff;
 }
-.text-below {
-  width: 80%;
-  text-align: center;
-  padding-bottom: 10px;
-  /* position: absolute; */
-  bottom: 0px;
-}
-.text-below img {
-  width: 60%;
-  text-align: center;
-}
+
 
 
 /* styling for the resonsive navbar */
@@ -117,9 +109,8 @@ nav ul li a {
   display: flex;
 }
 .first-ul .drop-command {
-  color: #068081;
+  /* color: #068081; */
   display: flex;
-  border: 1px solid #068081;
   padding: 10px;
   border-radius: 30px;
   gap: 10px;
@@ -127,11 +118,11 @@ nav ul li a {
 }
 .first-ul .drop-command svg {
   font-size: 30px;
-  color: #068081;
+  /* color: #068081; */
 }
 .first-ul .drop-command h5 {
   font-size: 20px;
-  color: #068081;
+  /* color: #068081; */
 }
 .first-ul li  {
   width: 100%;
@@ -155,7 +146,6 @@ nav ul li a {
   align-items: center;
   margin: auto 30%;
   padding-left: 5px;
-  color: 068081;
   font-weight: 700;
   font-size: 26px;
   display: flex;
@@ -192,16 +182,14 @@ nav ul li a {
   justify-content: center;
   display: flex;
   width: 100%;
-  background-color: #F3F6F4;
+  background-color: #f9ffff;
 }
 
 .topnav-container{
   display: flex;
   width: 100%;
-  justify-content: space-between;
-  gap: 20px;
+  justify-content: right;
   align-items: center;
-  /* margin-bottom: 10px; */
   padding: 10px 0px;
   border-radius: 30px;
 }
@@ -209,4 +197,7 @@ nav ul li a {
 .topnav-flec{
   display: flex;
   gap: 10px;
+}
+.avatar{
+  cursor: pointer;
 }

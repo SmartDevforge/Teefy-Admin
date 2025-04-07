@@ -12,12 +12,12 @@ export const  CustomInput= ({type, placeholder, img}) => {
 
 
 
-export const  CustomFormInput= ({type, placeholder,label}) => {
+export const  CustomFormInput= ({type, placeholder,label, onChange, value}) => {
     
   return (
     <div className='formInput'>
       <label>{label}</label>
-        <input type={type} placeholder={placeholder}/>
+        <input type={type} placeholder={placeholder} value={value} onChange={onChange}/>
     </div>
   )
 }

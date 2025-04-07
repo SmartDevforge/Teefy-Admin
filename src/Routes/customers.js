@@ -1,24 +1,35 @@
-import React,  { useEffect } from 'react';
+import React, { useState } from 'react';
 import SideNav from '../Components/navbars/SideNav';
-import StorePage from '../Components/store/StorePage';
+import CustomersTable from '../Components/customers/Customers';
+import ProductForm from '../Components/navbars/ProductForm';
+
 
 const Customer = () => {
 
-//   useEffect(() => {
-//     const allLi = document.querySelector('.side-nav ul')
-//     .querySelectorAll("a")
+  const [showForm, setShowForm] = useState(false);
+  const handleShowForm = () => {
+    setShowForm(true)
+    console.log('Mata clicked me')
+  }
+  const handleCloseForm = () => {
+    setShowForm(false)
 
-//     function changeMenuActive() {
-//         allLi.forEach((n) => n.classList.remove('active'));
-//         this.classList.add('active');
-//     }
-
-//     allLi.forEach((n) => n.addEventListener('click', changeMenuActive))
-// }, []);
+    console.log('them unclick oo')
+  }
   return (
     <div>
       <SideNav />
-      <StorePage />
+      <CustomersTable />
+
+
+      <div>
+        {
+          showForm ?
+
+            <ProductForm onClick={handleCloseForm} />
+            : null
+        }
+      </div>
     </div>
   );
 }

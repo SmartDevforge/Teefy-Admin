@@ -1,3 +1,9 @@
+import dryFish from '../../assets/fish.png';
+import rice from '../../assets/rice.png';
+import tomato from '../../assets/tomato.png'
+
+
+
 export const orders = [
   {
     id: "#28392OD",
@@ -11,9 +17,15 @@ export const orders = [
     date: "Oct 1, 05:53 PM",
     status: "Pending",
     products: [
-      { name: "Red Tomato Ball", price: "£13.00", qty: 12, status: "Pending" },
-      { name: "Dry fish panla egun (eja kika)", price: "£16.00", qty: 6, status: "Pending" },
-      { name: "Ofada Rice", price: "£11.00", qty: 1, status: "Pending" },
+      {
+        name: "Red Tomato Ball",
+        price: "£13.00",
+        qty: 12,
+        status: "Pending",
+        img:dryFish
+      },
+      { name: "Dry fish panla egun (eja kika)", price: "£16.00", qty: 6, status: "Pending",img:dryFish},
+      { name: "Ofada Rice", price: "£11.00", qty: 1, status: "Pending", img:dryFish},
     ],
   },
   {
@@ -28,8 +40,8 @@ export const orders = [
     date: "Oct 2, 08:53 AM",
     status: "Delivered",
     products: [
-      { name: "Basmati Rice", price: "£15.00", qty: 5, status: "Delivered" },
-      { name: "Plantain Chips", price: "£14.00", qty: 3, status: "Delivered" },
+      { name: "Basmati Rice", price: "£15.00", qty: 5, status: "Delivered",img:dryFish },
+      { name: "Plantain Chips", price: "£14.00", qty: 3, status: "Delivered",img:dryFish },
     ],
   },
   {
@@ -43,10 +55,11 @@ export const orders = [
     totalItems: 3,
     date: "Sep 24, 10:03 AM",
     status: "Cancelled",
+  
     products: [
-      { name: "Frozen Chicken", price: "£40.00", qty: 2, status: "Cancelled" },
-      { name: "Yam Tubers", price: "£35.00", qty: 1, status: "Cancelled" },
-      { name: "Palm Oil", price: "£45.00", qty: 1, status: "Cancelled" },
+      { name: "Frozen Chicken", price: "£40.00", qty: 2, status: "Cancelled",img:dryFish },
+      { name: "Yam Tubers", price: "£35.00", qty: 1, status: "Cancelled",img:dryFish },
+      { name: "Palm Oil", price: "£45.00", qty: 1, status: "Cancelled",img:dryFish },
     ],
   },
   {
@@ -61,9 +74,9 @@ export const orders = [
     date: "Sep 28, 01:45 PM",
     status: "Pending",
     products: [
-      { name: "Groundnut Oil", price: "£20.00", qty: 1, status: "Pending" },
-      { name: "Cashew Nuts", price: "£25.00", qty: 2, status: "Pending" },
-      { name: "Honey", price: "£30.00", qty: 1, status: "Pending" },
+      { name: "Groundnut Oil", price: "£20.00", qty: 1, status: "Pending",img:dryFish },
+      { name: "Cashew Nuts", price: "£25.00", qty: 2, status: "Pending",img:dryFish },
+      { name: "Honey", price: "£30.00", qty: 1, status: "Pending",img:dryFish },
     ],
   },
   {
@@ -78,9 +91,9 @@ export const orders = [
     date: "Sep 30, 07:10 AM",
     status: "Delivered",
     products: [
-      { name: "Beans Flour", price: "£18.00", qty: 2, status: "Delivered" },
-      { name: "Coconut Oil", price: "£17.00", qty: 1, status: "Delivered" },
-      { name: "Avocado", price: "£20.00", qty: 4, status: "Delivered" },
+      { name: "Beans Flour", price: "£18.00", qty: 2, status: "Delivered",img:dryFish },
+      { name: "Coconut Oil", price: "£17.00", qty: 1, status: "Delivered",img:dryFish },
+      { name: "Avocado", price: "£20.00", qty: 4, status: "Delivered",img:dryFish },
     ],
   },
   {
@@ -95,9 +108,9 @@ export const orders = [
     date: "Oct 5, 03:23 PM",
     status: "Pending",
     products: [
-      { name: "Banana", price: "£22.00", qty: 5, status: "Pending" },
-      { name: "Pineapple", price: "£33.00", qty: 2, status: "Pending" },
-      { name: "Oranges", price: "£33.00", qty: 6, status: "Pending" },
+      { name: "Banana", price: "£22.00", qty: 5, status: "Pending",img:dryFish },
+      { name: "Pineapple", price: "£33.00", qty: 2, status: "Pending",img:dryFish },
+      { name: "Oranges", price: "£33.00", qty: 6, status: "Pending",img:dryFish },
     ],
   },
   {
@@ -112,8 +125,8 @@ export const orders = [
     date: "Oct 7, 09:15 AM",
     status: "Cancelled",
     products: [
-      { name: "Goat Meat", price: "£34.00", qty: 2, status: "Cancelled" },
-      { name: "Cow Skin (Ponmo)", price: "£30.00", qty: 3, status: "Cancelled" },
+      { name: "Goat Meat", price: "£34.00", qty: 2, status: "Cancelled",img:dryFish },
+      { name: "Cow Skin (Ponmo)", price: "£30.00", qty: 3, status: "Cancelled",img:dryFish },
     ],
   },
   {
@@ -128,9 +141,9 @@ export const orders = [
     date: "Oct 10, 02:42 PM",
     status: "Delivered",
     products: [
-      { name: "Oats", price: "£28.00", qty: 3, status: "Delivered" },
-      { name: "Wheat Flour", price: "£29.00", qty: 1, status: "Delivered" },
-      { name: "Corn Flakes", price: "£55.00", qty: 5, status: "Delivered" },
+      { name: "Oats", price: "£28.00", qty: 3, status: "Delivered",img:dryFish },
+      { name: "Wheat Flour", price: "£29.00", qty: 1, status: "Delivered",img:dryFish },
+      { name: "Corn Flakes", price: "£55.00", qty: 5, status: "Delivered",img:dryFish },
     ],
   },
   {
@@ -145,9 +158,9 @@ export const orders = [
     date: "Oct 12, 11:19 AM",
     status: "Pending",
     products: [
-      { name: "Tomato Paste", price: "£20.00", qty: 4, status: "Pending" },
-      { name: "Pepper Mix", price: "£27.00", qty: 3, status: "Pending" },
-      { name: "Onions", price: "£30.00", qty: 2, status: "Pending" },
+      { name: "Tomato Paste", price: "£20.00", qty: 4, status: "Pending",img:dryFish },
+      { name: "Pepper Mix", price: "£27.00", qty: 3, status: "Pending",img:dryFish },
+      { name: "Onions", price: "£30.00", qty: 2, status: "Pending",img:dryFish },
     ],
   },
   {
@@ -162,9 +175,9 @@ export const orders = [
     date: "Oct 15, 04:30 PM",
     status: "Cancelled",
     products: [
-      { name: "Watermelon", price: "£33.00", qty: 2, status: "Cancelled" },
-      { name: "Mango", price: "£28.00", qty: 3, status: "Cancelled" },
-      { name: "Papaya", price: "£37.00", qty: 4, status: "Cancelled" },
+      { name: "Watermelon", price: "£33.00", qty: 2, status: "Cancelled",img:dryFish },
+      { name: "Mango", price: "£28.00", qty: 3, status: "Cancelled",img:dryFish },
+      { name: "Papaya", price: "£37.00", qty: 4, status: "Cancelled",img:dryFish },
     ],
   },
 ];
