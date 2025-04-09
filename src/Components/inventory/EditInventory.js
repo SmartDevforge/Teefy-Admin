@@ -17,7 +17,7 @@ const EditInventory = ({ item, onClose }) => {
     <div className="edit-modal-container">
       <div className="edit-box">
         <h3>Edit Inventory</h3>
-        <form onSubmit={handleSubmit}>
+        <div onSubmit={handleSubmit}>
 
           <CustomFormInput label={'Current Stock'} value={stock}
             onChange={(e) => setStock(Number(e.target.value))}
@@ -34,10 +34,11 @@ const EditInventory = ({ item, onClose }) => {
             <button type="submit">Save</button>
             <button type="button" className="cancel" onClick={onClose}>Cancel</button>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   );
 };
 
 export default EditInventory;
+
