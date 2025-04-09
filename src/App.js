@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Dashboard from "./Routes/dashboard";
 import Login from "./Components/login/Login";
 import Products from "./Routes/products";
@@ -9,8 +9,8 @@ import Inventory from "./Routes/Inventory";
 
 function App() {
   return (
-    <>
-      <Routes>
+    <Router>
+       <Routes>
         <Route path='/' element={<Login />} />
         <Route path='/dashboard' element={<Dashboard />} />
         <Route path="/orders" element={<Order />} />
@@ -18,9 +18,8 @@ function App() {
         <Route path="/customers" element={<Customer />} />
         <Route path="/inventory" element={<Inventory />} />
         <Route path="/inventory" element={<Inventory />} />
-
       </Routes>
-    </>
+    </Router>
   );
 }
 
