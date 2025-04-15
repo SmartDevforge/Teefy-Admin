@@ -20,7 +20,7 @@ const Order = () => {
   return (
     <div>
       <SideNav />
-      <OrderComponent />
+      <OrderComponent onClick={handleShowForm} />
 
       <div>
         {

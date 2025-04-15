@@ -1,11 +1,9 @@
-import React, { Fragment, useState } from "react";
+import React from "react";
 import "./MainDash.css";
-import { MdBarChart } from "react-icons/md";
 import wallet from '../../assets/svgs/wallet.svg';
 import product from '../../assets/svgs/product.svg';
 import arrowDown from '../../assets/svgs/arrowDown.svg';
 import TopNav from "../navbars/TopNav";
-import ProductForm from '../navbars/ProductForm';
 import greenChart from '../../assets/svgs/greenChart.svg';
 import redChart from '../../assets/svgs/redChart.svg';
 import { DoughnutCharts, LineCharts } from "./Charts";
@@ -15,7 +13,6 @@ import TopSelling from "./TopSelling";
 
 function MainDash({onClick}) {
 
-  // https://www.figma.com/design/sz7F668QqVKkIf5Tg3NT58/TeeFey-E-commerce?node-id=166-899&t=vZc03O65kQVdff5r-0
 
   return (
     <div className="dashboard-container">

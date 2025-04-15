@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./SideNav.css";
 import "../Responsiveness.css";
-import { FaUser, FaHome } from "react-icons/fa";
-import { BsPencilSquare, BsGrid1X2Fill, BsCart3 } from "react-icons/bs";
+import { FaHome } from "react-icons/fa";
+import { BsPencilSquare, BsGrid1X2Fill } from "react-icons/bs";
 import { MdBarChart } from "react-icons/md";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
 
@@ -96,7 +96,7 @@ function SideNav() {
       <div className="side-nav">
         <nav>
           <li className="logo">
-            <Link to="/dashboard">TEEFY</Link>
+            <Link to="/dashboard">TEEFEY</Link>
           </li>
           <ul>
             <li>

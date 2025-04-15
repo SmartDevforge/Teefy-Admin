@@ -53,15 +53,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* padding-bottom: 30px; */
   gap: 10px;
 }
 .semi-mini-chart {
   display: flex;
   gap: 10px;
   align-items: center;
-  border: 1px solid black;
+  border: 1px solid #f3f3f4;
   cursor: pointer;
+  border: radius 5px;
+  padding: 2px;
 }
 .colored-chart {
   font-size: 12px;
@@ -110,7 +111,7 @@
 .linechartTop div{
   display: flex;
   gap: 15px;
-  border: 1px solid rgb(180, 180, 180);
+  border: 1px solid #E5EBE7;
   cursor: pointer;
 }
 /* Top Selling products */
@@ -136,19 +137,13 @@
 }
 .per-unit img {
   border: 1px solid rgb(128, 129, 129);
+  width: 50px;
+  padding: 2px;
 }
-
-
-/* Form Styling  */
-/* .formcontainer{
-  width: 100%;
-  justify-content: center;
-  display: flex;
-  margin: auto;
-  background: red;
+.per-unit p{
+  color: #4F63F9;
+  font-size: 14px;
 }
- */
-
 
 
 

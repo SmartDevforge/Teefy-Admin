@@ -19,7 +19,7 @@ const Customer = () => {
   return (
     <div>
       <SideNav />
-      <CustomersTable />
+      <CustomersTable onClick={handleShowForm} />
 
 
       <div>

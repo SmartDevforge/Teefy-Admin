@@ -22,10 +22,10 @@ export const orders = [
         price: "£13.00",
         qty: 12,
         status: "Pending",
-        img:dryFish
+        img:tomato
       },
       { name: "Dry fish panla egun (eja kika)", price: "£16.00", qty: 6, status: "Pending",img:dryFish},
-      { name: "Ofada Rice", price: "£11.00", qty: 1, status: "Pending", img:dryFish},
+      { name: "Ofada Rice", price: "£11.00", qty: 1, status: "Pending", img:rice},
     ],
   },
   {

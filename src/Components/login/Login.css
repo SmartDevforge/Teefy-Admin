@@ -8,17 +8,30 @@
     padding: 0px;
     justify-content: center;
     margin: auto;
-    width: 95%;
+    width: 100%;
+    display: flex;
+    
 }
 .login{
     display: flex;
     justify-content: center;
     height: 100%;
     align-items: center;
+    width: 100%;
 }
 .login-form{
     width: 35%;
     padding: 25px;
+    box-shadow: 2px 2px 2px 2px #068081;
+    border-radius: 10pt;
+}
+.login-form h1{
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    color: #068081;
+    padding-bottom: 5px;
 }
 .login-form h5{
     font-size: 25px;
@@ -71,7 +84,7 @@
 .login-form button{
     padding: 10px 20px;
     cursor: pointer;
-    background: rgb(201, 18, 18);
+    background: #068081;
     border: none;
     justify-content: center;
     width: 100%;

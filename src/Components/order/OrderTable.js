@@ -20,7 +20,7 @@ const OrderTable = ({ filterStatus, searchQuery }) => {
     setSelectedOrder(order);
   };
 
-  // Filter orders by status and search query
+
   const filteredOrders = orders
     .filter((order) => (filterStatus ? order.status === filterStatus : true)) // Status filter
     .filter((order) =>
@@ -74,7 +74,7 @@ const OrderTable = ({ filterStatus, searchQuery }) => {
                   <tbody>
                     {selectedOrder.products.map((product, index) => (
                       <tr key={index} className="product-item">
-                        <td className="tabledataImg"><img src={product.img} /><p>{product.name}</p></td>
+                        <td className="tabledataImg"><img src={product.img} alt="" /><p>{product.name}</p></td>
                         <td>{product.qty}</td>
                         <td>{product.price}</td>
                         <td className={`status ${product.status.toLowerCase()}`}>
@@ -148,7 +148,7 @@ const OrderTable = ({ filterStatus, searchQuery }) => {
                             <tbody>
                               {order.products.map((product, index) => (
                                 <tr key={index} className="product-item">
-                                  <td className="tabledataImg"><img src={product.img} /><p>{product.name}</p></td>
+                                  <td className="tabledataImg"><img src={product.img} alt="" /><p>{product.name}</p></td>
                                   <td>{product.qty}</td>
                                   <td>{product.price}</td>
                                   <td className={`status ${product.status.toLowerCase()}`}>

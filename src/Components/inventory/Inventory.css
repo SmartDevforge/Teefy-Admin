@@ -109,7 +109,9 @@
   width: 40%;
   margin: auto;
   justify-content: center;
+  
 }
+/* npm install axios */
 
 .edit-actions {
   display: flex;

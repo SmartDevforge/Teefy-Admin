@@ -57,9 +57,18 @@
   background: none;
   font-size: 16px;
 }
+.tabledataimage{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.tabledataimage img{
+ width:2rem ;
+}
 
 .delete-btn {
   color: red;
+  cursor: pointer;
 }
 
 .delete-modal {
@@ -124,6 +133,12 @@
   border-radius: 5px;
   margin: auto;
 }
+.delete-modal-content svg{
+  font-size: 30px;
+  display: flex;
+  justify-items: center;
+  width: 100%;
+}
 .modal-content h5, .delete-modal-content  h5 {
   color: #012220;
   font-size: 18px;
@@ -171,3 +186,4 @@
   cursor: pointer;
   border-radius: 5px;
 }
+

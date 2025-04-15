@@ -1,0 +1,20 @@
+.profile-container {
+    background-color: #f3f6f4;
+    justify-content: center;
+    align-items: center;
+    width: 98%;
+    margin: auto;
+    padding-left: 210px;
+}
+.profile{
+    background-color: #ffffff;
+    display: flex;
+    gap: 20px;
+    padding: 5px;
+    border-radius: 5px
+;
+}
+.logout{
+    color: red;
+    cursor: pointer;
+}
