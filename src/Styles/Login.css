@@ -1,0 +1,155 @@
+/* Overall Page */
+.login-page {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  /* Left Panel */
+  .left-panel {
+    flex: 1;
+    background: #d1f3f2;
+    position: relative;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  /* Background Icon */
+  .background-icon {
+    position: absolute;
+    font-size: 350px;
+    color: #068081;
+    opacity: 0.1;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Branding Text */
+  .branding {
+    z-index: 2;
+  }
+  .branding h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    color: #068081;
+  }
+  .branding h1 span {
+    font-weight: bold;
+  }
+  .branding p {
+    font-size: 18px;
+    color: #555;
+  }
+  
+  /* Right Panel (Form) */
+  .right-panel {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Login Form */
+  .login-form {
+    width: 100%;
+    max-width: 400px;
+  }
+  .login-form h2 {
+    text-align: center;
+    color: #068081;
+    margin-bottom: 20px;
+  }
+  
+  .user-input {
+    margin-top: 20px;
+  }
+  .user-input label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .input {
+    background: #f4f5f7;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+  }
+  .input svg {
+    margin-right: 8px;
+    color: gray;
+  }
+  .input input {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+  }
+  
+  /* Remember me */
+  .remember {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+  }
+  .remember input {
+    margin-right: 5px;
+  }
+  
+  /* Button */
+  button {
+    width: 100%;
+    padding: 12px;
+    background: #068081;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    margin-top: 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  /* Error Text */
+  .error {
+    color: tomato;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  /* ================= RESPONSIVENESS ================== */
+  @media (max-width: 900px) {
+    .login-page {
+        flex-direction: column;
+    }
+    .left-panel, .right-panel {
+        flex: unset;
+        width: 100%;
+        height: 50%;
+    }
+    .background-icon {
+        font-size: 200px;
+    }
+    .branding h1 {
+        font-size: 36px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .branding h1 {
+        font-size: 30px;
+    }
+    .branding p {
+        font-size: 16px;
+    }
+    .background-icon {
+        font-size: 150px;
+    }
+  }
