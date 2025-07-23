@@ -42,30 +42,6 @@ const Orders = () => {
       setIsLoading(false)
     }
   }
-
-  // const updateOrderStatus = async (orderId, newStatus) => {
-  //   try {
-  //     // /v1
-  //     // await api.patch(` /orders/update/${orderId}`, { status: newStatus })
-  //           await api.patch(`/orders/update/6818d06b66339eb69bc4f743`, { status: newStatus })
-
-  //     console.log(newStatus)
-  //     setOrders(orders.map((order) => (order.id === orderId ? { ...order, status: newStatus } : order)))
-  //     toast({
-  //       title: "Success",
-  //       description: "Order status updated successfully",
-  //     })
-  //   } catch (error) {
-  //     toast({
-  //       title: "Error",
-  //       description: "Failed to update order status",
-  //       variant: "destructive",
-  //     })
-  //     console.log(error)
-  //   }
-  // }
-
-
   const updateOrderStatus = async (orderId, newStatus) => {
     const api_key = import.meta.env.VITE_API_KEY || "your_api_key_here";
     const baseURL = import.meta.env.VITE_API_URL
@@ -179,7 +155,18 @@ const Orders = () => {
               <div>
                 <h4 className="font-semibold">Order Information</h4>
                 <p className="text-sm text-gray-600">Order ID: #{selectedOrder._id.slice(-6)}</p>
-                <p className="text-sm text-gray-600">Date: {new Date(selectedOrder.date).toLocaleDateString()}</p>
+                <p className="text-sm text-gray-600">
+                  Date: {new Date(selectedOrder.date).toLocaleString("en-GB", {
+                    year: "numeric",
+                    month: "short",
+                    day: "2-digit",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    hour12: true,
+                  })}
+                </p>
+
+
                 <p className="text-sm text-gray-600">Total: ${selectedOrder.total.toFixed(2)}</p>
               </div>
               <div>
@@ -197,14 +184,14 @@ const Orders = () => {
                 {selectedOrder?.shippingAddress
                   ? (
                     <>
-                      <div className="text-sm text-gray-800 leading-relaxed space-y-1 flex ">
+                           <div className="grid grid-cols-2 gap-3">
                         <div>
                           <p><span className="font-medium">Street:</span> {selectedOrder?.shippingAddress?.street || "N/A"}</p>
                           <p><span className="font-medium">Apartment:</span> {selectedOrder?.shippingAddress?.apartment || "N/A"}</p>
                           <p><span className="font-medium">City:</span> {selectedOrder?.shippingAddress?.city || "N/A"}</p>
+                          <p><span className="font-medium">County:</span> {selectedOrder?.shippingAddress?.county || "N/A"}</p>
                         </div>
                         <div>
-                          <p><span className="font-medium">County:</span> {selectedOrder?.shippingAddress?.county || "N/A"}</p>
                           <p><span className="font-medium">Postcode:</span> {selectedOrder?.shippingAddress?.postcode || "N/A"}</p>
                           <p><span className="font-medium">Country:</span> {selectedOrder?.shippingAddress?.country || "N/A"}</p>
                           <p><span className="font-medium">Phone:</span> {selectedOrder?.shippingAddress?.phone || "N/A"}</p>

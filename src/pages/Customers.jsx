@@ -49,7 +49,6 @@ const Customers = () => {
       })
     }
   }
-
   if (isLoading) {
     return (
       <LoadingPage />
@@ -122,17 +121,20 @@ const Customers = () => {
               {selectedCustomer?.shippingAddress
                 ? (
                   <>
-                    <div className="text-sm text-gray-800 leading-relaxed space-y-1">
                     <h4 className="font-semibold">Shipping Address</h4>
-                      <p><span className="font-medium">Street:</span> {selectedCustomer?.shippingAddress?.street || "N/A"}</p>
-                      <p><span className="font-medium">Apartment:</span> {selectedCustomer?.shippingAddress?.apartment || "N/A"}</p>
-                      <p><span className="font-medium">City:</span> {selectedCustomer?.shippingAddress?.city || "N/A"}</p>
-                      <p><span className="font-medium">County:</span> {selectedCustomer?.shippingAddress?.county || "N/A"}</p>
-                      <p><span className="font-medium">Postcode:</span> {selectedCustomer?.shippingAddress?.postcode || "N/A"}</p>
-                      <p><span className="font-medium">Country:</span> {selectedCustomer?.shippingAddress?.country || "N/A"}</p>
-                      <p><span className="font-medium">Phone:</span> {selectedCustomer?.shippingAddress?.phone || "N/A"}</p>
+                    <div className="grid grid-cols-2 gap-3">
+                      <div>
+                        <p><span className="font-medium">Street:</span> {selectedCustomer?.shippingAddress?.street || "N/A"}</p>
+                        <p><span className="font-medium">Apartment:</span> {selectedCustomer?.shippingAddress?.apartment || "N/A"}</p>
+                        <p><span className="font-medium">City:</span> {selectedCustomer?.shippingAddress?.city || "N/A"}</p>
+                        <p><span className="font-medium">County:</span> {selectedCustomer?.shippingAddress?.county || "N/A"}</p>
+                      </div>
+                      <div>
+                        <p><span className="font-medium">Postcode:</span> {selectedCustomer?.shippingAddress?.postcode || "N/A"}</p>
+                        <p><span className="font-medium">Country:</span> {selectedCustomer?.shippingAddress?.country || "N/A"}</p>
+                        <p><span className="font-medium">Phone:</span> {selectedCustomer?.shippingAddress?.phone || "N/A"}</p>
+                      </div>
                     </div>
-
                   </>
                 )
                 : <p>No shipping address provided.</p>
