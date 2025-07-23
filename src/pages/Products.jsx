@@ -164,7 +164,7 @@ const Products = () => {
               
                   <TableCell>{product.noOfQuantity}</TableCell>
                   <TableCell>{product.noOfUnits}</TableCell>
-                  <TableCell>${product.price.toFixed(2)}</TableCell>
+                  <TableCell>£{product.price.toFixed(2)}</TableCell>
                   <TableCell>
                     <div className="flex space-x-2">
                       <Button variant="outline" size="sm" onClick={() => handleEdit(product)}>

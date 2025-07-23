@@ -130,12 +130,11 @@ const Orders = () => {
                       <TableCell>{order.userId?.firstname + " " + order.userId?.lastname}</TableCell>
                       <TableCell>{new Date(order.date).toLocaleDateString()}</TableCell>
                       <TableCell>{getStatusBadge(order.paymentStatus)}</TableCell>
-                      <TableCell>${order.total.toFixed(2)}</TableCell>
+                      <TableCell>£{order.total.toFixed(2)}</TableCell>
                       <TableCell>{getStatusBadge(order.status)}</TableCell>
                       <TableCell>
                         <Button variant="outline" size="sm" onClick={() => openOrderDetails(order)}>
                           <Eye className="w-4 h-4" />
-
                         </Button>
                       </TableCell>
                     </TableRow>
@@ -167,7 +166,7 @@ const Orders = () => {
                 </p>
 
 
-                <p className="text-sm text-gray-600">Total: ${selectedOrder.total.toFixed(2)}</p>
+                <p className="text-sm text-gray-600">Total: £{selectedOrder.total.toFixed(2)}</p>
               </div>
               <div>
                 <h4 className="font-semibold">Customer Information</h4>
@@ -221,8 +220,8 @@ const Orders = () => {
                     <TableRow key={index}>
                       <TableCell> {item.productId.productName}</TableCell>
                       <TableCell>{item.qty}</TableCell>
-                      <TableCell>${item.price.toFixed(2)}</TableCell>
-                      <TableCell>${item.price * item.qty.toFixed(2)}</TableCell>
+                      <TableCell>£{item.price.toFixed(2)}</TableCell>
+                      <TableCell>£{item.price * item.qty.toFixed(2)}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>

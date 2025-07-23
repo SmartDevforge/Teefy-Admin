@@ -79,7 +79,7 @@ if (isLoading) {
             <DollarSign className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">$ 2.8%</div>
+            <div className="text-2xl font-bold">£ 2.8%</div>
             <p className="text-xs text-muted-foreground">Today's revenue</p>
           </CardContent>
         </Card>
@@ -150,7 +150,7 @@ if (isLoading) {
                 <Tooltip />
                 <Legend />
                 <Line type="monotone" dataKey="orders" stroke="#8884d8" name="Orders" />
-                <Line type="monotone" dataKey="revenue" stroke="#82ca9d" name="Revenue ($)" />
+                <Line type="monotone" dataKey="revenue" stroke="#82ca9d" name="Revenue (£)" />
               </LineChart>
             </ResponsiveContainer>
           </CardContent>
@@ -181,7 +181,7 @@ if (isLoading) {
                   </TableCell>
                   <TableCell className="font-medium">{product.productName}</TableCell>
                   <TableCell>{product.salesData.quantitySold}</TableCell>
-                  <TableCell>${product.salesData.amountSold.toLocaleString()}</TableCell>
+                  <TableCell>£{product.salesData.amountSold.toLocaleString()}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
