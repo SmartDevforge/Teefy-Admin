@@ -121,7 +121,7 @@ const Customers = () => {
               {selectedCustomer?.shippingAddress
                 ? (
                   <>
-                    <h4 className="font-semibold">Shipping Address</h4>
+                    <h4 className="font-semibold text-black  mb-2">Shipping Address</h4>
                     <div className="grid grid-cols-2 gap-3">
                       <div>
                         <p><span className="font-medium">Street:</span> {selectedCustomer?.shippingAddress?.street || "N/A"}</p>
@@ -142,7 +142,7 @@ const Customers = () => {
             </div>
 
 
-            {/* {selectedCustomer.orders && selectedCustomer.orders.length > 0 && (
+            {selectedCustomer.orderHistory && selectedCustomer.orderHistory.length > 0 && (
               <div>
                 <h4 className="font-semibold mb-2">Order History</h4>
                 <Table>
@@ -155,20 +155,28 @@ const Customers = () => {
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {selectedCustomer.orders.map((order) => (
-                      <TableRow key={order.id}>
-                        <TableCell>#{order.id.slice(-6)}</TableCell>
-                        <TableCell>{new Date(order.orderDate).toLocaleDateString()}</TableCell>
-                        <TableCell>${order.totalAmount.toFixed(2)}</TableCell>
+                    {selectedCustomer.orderHistory.map((order) => (
+                      <TableRow key={order._id}>
+                        <TableCell>#{order._id.slice(-6)}</TableCell>
+                        <TableCell>
+                          {new Date(order.date).toLocaleString("en-GB", {
+                            year: "numeric",
+                            month: "short",
+                            day: "2-digit",
+                            hour: "2-digit",
+                            minute: "2-digit",
+                            hour12: true,
+                          })}
+                        </TableCell>
+                        <TableCell>£{order.total.toFixed(2)}</TableCell>
                         <TableCell>
                           <span
-                            className={`px-2 py-1 rounded-full text-xs ${
-                              order.status === "delivered"
+                            className={`px-2 py-1 rounded-full text-xs ${order.status === "delivered"
                                 ? "bg-green-100 text-green-800"
                                 : order.status === "pending"
                                   ? "bg-yellow-100 text-yellow-800"
                                   : "bg-red-100 text-red-800"
-                            }`}
+                              }`}
                           >
                             {order.status.charAt(0).toUpperCase() + order.status.slice(1)}
                           </span>
@@ -178,7 +186,7 @@ const Customers = () => {
                   </TableBody>
                 </Table>
               </div>
-            )} */}
+            )}
           </div>
         )}
       </Modal>
