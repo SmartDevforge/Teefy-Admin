@@ -28,19 +28,17 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchDashboardData = async () => {
       try {
-        const [totalOrders, orderStatus, salesChart, topProducts, health] = await Promise.all([
+        const [totalOrders, orderStatus, salesChart, topProducts] = await Promise.all([
           api.get("/orders/total"), // used 
           api.get("/orders/stats"), // used 
           api.get("/orders/analytics"), // used but not tested
           api.get("/products/top-selling"),
-          api.get("/health")
         ])
         setData({
           totalOrders: totalOrders.data.data.orderCount,
           orderStatus: orderStatus.data.data.pieData,
           salesChart: salesChart.data.data,
           topProducts: topProducts.data.data,
-          health: health.data
         })
       } catch (error) {
         console.error("Failed to fetch dashboard data:", error)
@@ -64,16 +62,6 @@ const Dashboard = () => {
     if (item._id === "canceled") orderStatus.canceled = item.count;
   });
 
-  const formatUptime = (seconds) => {
-    const hrs = Math.floor(seconds / 3600);
-    const mins = Math.floor((seconds % 3600) / 60);
-    const secs = Math.floor(seconds % 60);
-    return `${hrs}h ${mins}m ${secs}s`;
-  };
-
-  const formatTimestamp = (ms) => {
-    return new Date(ms).toLocaleString();
-  };
 
 
   if (isLoading) {

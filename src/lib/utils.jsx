@@ -18,7 +18,7 @@ const HealthStatusCard = () => {
     const fetchHealth = async () => {
       try {
         const baseURL = import.meta.env.VITE_API_URL
-        const response = await fetch(`${baseURL}/health`); // Replace with your actual backend URL if needed
+        const response = await fetch(`${baseURL}/health`); 
         if (!response.ok) throw new Error("API failed");
 
         const data = await response.json();
@@ -33,11 +33,11 @@ const HealthStatusCard = () => {
       }
     };
 
-    fetchHealth(); // Initial fetch
+    fetchHealth(); 
 
     const intervalId = setInterval(() => {
       fetchHealth();
-    }, 60000); // Every 60 seconds
+    }, 60000); 
 
     return () => {
       isMounted = false;
