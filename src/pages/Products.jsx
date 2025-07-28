@@ -16,8 +16,9 @@ const Products = () => {
   const [isLoading, setIsLoading] = useState(true)
   const [editingProduct, setEditingProduct] = useState(null)
   const [isEditModalOpen, setIsEditModalOpen] = useState(false)
-  const  [isEditing, setIsEditing] = useState(false)
+  const [isEditing, setIsEditing] = useState(false)
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
+  const [isDeleteLoading, setDeleteLoading] = useState(false)
   const [productToDelete, setProductToDelete] = useState(null)
   const { toast } = useToast()
 
@@ -59,7 +60,7 @@ const Products = () => {
       });
       return;
     }
-  
+
     try {
       const formData = new FormData();
       formData.append("productName", editingProduct.productName);
@@ -69,14 +70,14 @@ const Products = () => {
       formData.append("noOfQuantity", editingProduct.noOfQuantity || 0);
       formData.append("noOfUnits", editingProduct.noOfUnits || 0);
       await api.put(`/products/update/${editingProduct._id}`, formData)
-  
+
       setProducts((prev) =>
         prev.map((p) => (p._id === editingProduct._id ? editingProduct : p))
       );
-  
+
       setIsEditModalOpen(false);
       setEditingProduct(null);
-  
+
       toast({
         title: "Success",
         description: "Product updated successfully.",
@@ -93,7 +94,7 @@ const Products = () => {
     }
   };
 
-  
+
 
   const handleDelete = (product) => {
     setProductToDelete(product)
@@ -103,6 +104,7 @@ const Products = () => {
   const confirmDelete = async () => {
     if (!productToDelete) return
 
+    setDeleteLoading(true)
     try {
       await api.delete(`/products/delete/${productToDelete._id}`)
       setProducts(products.filter((p) => p._id !== productToDelete._id))
@@ -112,12 +114,14 @@ const Products = () => {
         title: "Success",
         description: "Product deleted successfully",
       })
+      setDeleteLoading(false)
     } catch (error) {
       toast({
         title: "Error",
         description: "Failed to delete product",
         variant: "destructive",
       })
+      setDeleteLoading(false)
     }
   }
 
@@ -161,7 +165,7 @@ const Products = () => {
                     />
                   </TableCell>
                   <TableCell className="font-medium">{product.productName}</TableCell>
-              
+
                   <TableCell>{product.noOfQuantity}</TableCell>
                   <TableCell>{product.noOfUnits}</TableCell>
                   <TableCell>£{product.price.toFixed(2)}</TableCell>
@@ -258,7 +262,7 @@ const Products = () => {
               <Button variant="outline" onClick={() => setIsEditModalOpen(false)}>
                 Cancel
               </Button>
-              <Button className="bg-[#068081] hover:bg-[#8cdede]" onClick={handleSaveEdit}>{isEditing? "..." : "Save Changes"}</Button>
+              <Button className="bg-[#068081] hover:bg-[#8cdede]" onClick={handleSaveEdit}>{isEditing ? "..." : "Save Changes"}</Button>
             </div>
           </div>
         )}
@@ -273,8 +277,11 @@ const Products = () => {
               <Button variant="outline" onClick={() => setIsDeleteModalOpen(false)}>
                 Cancel
               </Button>
-              <Button variant="destructive" onClick={confirmDelete}>
-                Delete
+              <Button variant="destructive"  onClick={confirmDelete}>
+                {
+                  isDeleteLoading ? "Deleting..." :
+                    "Delete"
+                }
               </Button>
             </div>
           </div>

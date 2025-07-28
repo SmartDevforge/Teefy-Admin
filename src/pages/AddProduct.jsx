@@ -112,12 +112,14 @@ const AddProduct = () => {
       
 
     } catch (err) {
+   
       toast({
         title: "Error",
         description: err.response?.data?.message || "Failed to add product",
         variant: "destructive",
       });
       console.error('Error:', err.response?.data.data || err.message);
+      throw new Error(err || "Failed to add product");
     } finally {
       setIsLoading(false);
     }

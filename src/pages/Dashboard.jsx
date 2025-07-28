@@ -19,6 +19,7 @@ import {
 import { api } from "../utils/api"
 import { DollarSign, Package, TrendingUp, Users } from "lucide-react"
 import { LoadingPage } from "../components/ui/Loading"
+import HealthStatusCard from "../lib/utils"
 
 const Dashboard = () => {
   const [data, setData] = useState(null)
@@ -27,17 +28,19 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchDashboardData = async () => {
       try {
-        const [totalOrders, orderStatus, salesChart, topProducts] = await Promise.all([
+        const [totalOrders, orderStatus, salesChart, topProducts, health] = await Promise.all([
           api.get("/orders/total"), // used 
           api.get("/orders/stats"), // used 
           api.get("/orders/analytics"), // used but not tested
           api.get("/products/top-selling"),
+          api.get("/health")
         ])
         setData({
           totalOrders: totalOrders.data.data.orderCount,
           orderStatus: orderStatus.data.data.pieData,
           salesChart: salesChart.data.data,
           topProducts: topProducts.data.data,
+          health: health.data
         })
       } catch (error) {
         console.error("Failed to fetch dashboard data:", error)
@@ -48,11 +51,7 @@ const Dashboard = () => {
     }
     fetchDashboardData()
   }, [])
-if (isLoading) {
-    return (
-      <LoadingPage />
-    )
-  }
+
   const orderStatus = {
     pending: 0,
     delivered: 0,
@@ -65,6 +64,23 @@ if (isLoading) {
     if (item._id === "canceled") orderStatus.canceled = item.count;
   });
 
+  const formatUptime = (seconds) => {
+    const hrs = Math.floor(seconds / 3600);
+    const mins = Math.floor((seconds % 3600) / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${hrs}h ${mins}m ${secs}s`;
+  };
+
+  const formatTimestamp = (ms) => {
+    return new Date(ms).toLocaleString();
+  };
+
+
+  if (isLoading) {
+    return (
+      <LoadingPage />
+    )
+  }
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
@@ -72,7 +88,7 @@ if (isLoading) {
       </div>
 
       {/* Summary Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Daily Sales</CardTitle>
@@ -108,6 +124,11 @@ if (isLoading) {
           </CardContent>
         </Card>
 
+
+        <HealthStatusCard />
+
+
+
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Order Analysis</CardTitle>
@@ -131,6 +152,8 @@ if (isLoading) {
 
           </CardContent>
         </Card>
+
+
       </div>
 
       {/* Charts Section */}
@@ -157,40 +180,40 @@ if (isLoading) {
         </Card>
 
 
-           {/* Top Selling Products */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Top Selling Products</CardTitle>
-          <CardDescription>Best performing products by units sold and revenue</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Product Image</TableHead>
-                <TableHead>Product Name</TableHead>
-                <TableHead>Units Sold</TableHead>
-                <TableHead>Revenue</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {data?.topProducts.map((product) => (
-                <TableRow key={product._id}>
-                  <TableCell className="font-medium">
-                    <img className="w-[45px] h-[45px] rounded-lg" src={product.image} />
-                  </TableCell>
-                  <TableCell className="font-medium">{product.productName}</TableCell>
-                  <TableCell>{product.salesData.quantitySold}</TableCell>
-                  <TableCell>£{product.salesData.amountSold.toLocaleString()}</TableCell>
+        {/* Top Selling Products */}
+        <Card>
+          <CardHeader>
+            <CardTitle>Top Selling Products</CardTitle>
+            <CardDescription>Best performing products by units sold and revenue</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Product Image</TableHead>
+                  <TableHead>Product Name</TableHead>
+                  <TableHead>Units Sold</TableHead>
+                  <TableHead>Revenue</TableHead>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </CardContent>
-      </Card>
+              </TableHeader>
+              <TableBody>
+                {data?.topProducts.map((product) => (
+                  <TableRow key={product._id}>
+                    <TableCell className="font-medium">
+                      <img className="w-[45px] h-[45px] rounded-lg" src={product.image} />
+                    </TableCell>
+                    <TableCell className="font-medium">{product.productName}</TableCell>
+                    <TableCell>{product.salesData.quantitySold}</TableCell>
+                    <TableCell>£{product.salesData.amountSold.toLocaleString()}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </CardContent>
+        </Card>
       </div>
 
-   
+
     </div>
   )
 }
