@@ -20,7 +20,6 @@ const AddProduct = () => {
     description: '',
     categoryId: "67e2000f8740ecc07f3f2826",
   });
-
   const [image, setImage] = useState(null)
   const [imagePreview, setImagePreview] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
@@ -35,7 +34,6 @@ const AddProduct = () => {
       [name]: name === "quantity" || name === "price" ? Number.parseFloat(value) || 0 : value,
     }))
   }
-
   const handleImageChange = (file) => {
     setImage(file)
     const reader = new FileReader()
@@ -44,7 +42,6 @@ const AddProduct = () => {
     }
     reader.readAsDataURL(file)
   }
-
   const handleDrag = (e) => {
     e.preventDefault()
     e.stopPropagation()
@@ -99,7 +96,7 @@ const AddProduct = () => {
         title: "Success",
         description: "Product added successfully",
       });
-
+      navigate("/products")
       // Optionally reset form
       setImage(null);
       setFormData({
